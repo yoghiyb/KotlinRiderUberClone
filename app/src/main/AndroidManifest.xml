@@ -28,10 +28,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+        
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
@@ -45,6 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".services.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
