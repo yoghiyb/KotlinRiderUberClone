@@ -81,4 +81,7 @@ dependencies {
 
     // Firebase Cloud Messaging
     implementation 'com.google.firebase:firebase-messaging:20.2.0'
+
+    // Geofire
+    implementation 'com.firebase:geofire-android:3.0.0'
 }

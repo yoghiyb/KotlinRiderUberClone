@@ -10,13 +10,18 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
 import androidx.core.app.NotificationCompat
+import com.google.android.gms.maps.model.Marker
 import com.yoghi.kotlinrideruberclone.R
+import com.yoghi.kotlinrideruberclone.model.DriverGeoModel
 import com.yoghi.kotlinrideruberclone.model.RiderModel
 
 object Common {
 
 
-
+    val markerList: MutableMap<String, Marker> = HashMap<String, Marker>()
+    val DRIVER_INFO_REFERENCES: String = "DriverInfo"
+    val driversFound: MutableSet<DriverGeoModel> = HashSet<DriverGeoModel>()
+    val DRIVERS_LOCATION_REFERENCES: String = "DriversLocation"
     val TOKEN_REFERENCE: String = "Token"
     var currentRider: RiderModel? = null
     val RIDER_INFO_REFERENCE: String = "Riders"
@@ -67,5 +72,9 @@ object Common {
             .append(" ")
             .append(currentRider!!.lastName)
             .toString()
+    }
+
+    fun buildName(firstName: String?, lastName: String?): String? {
+        return StringBuilder(firstName!!).append(" ").append(lastName).toString()
     }
 }
